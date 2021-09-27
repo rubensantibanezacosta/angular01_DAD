@@ -6,17 +6,24 @@ import { MenuComponent } from './components/menu/menu.component';
 import { ListComponent } from './components/list/list.component';
 import { EntryComponent } from './components/list/entry/entry.component';
 import {HttpClientModule} from '@angular/common/http';
+import { AppRoutingModule } from './app-routing.module';
+
+import { PageNotFoundComponent } from './views/page-not-found/page-not-found.component';
+import { AboutUsComponent } from './views/about-as/about-us.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
     ListComponent,
-    EntryComponent
+    EntryComponent,
+    AboutUsComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

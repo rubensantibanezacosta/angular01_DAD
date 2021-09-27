@@ -1,5 +1,7 @@
 <div *ngFor="let entry of Entries">
-    <li class="list-group-item" >
-    {{entry.info}}
+    <li class="list-group-item bg-transparent text-info text- border-1 border border-secondary shadow-sm" >
+    <h4>{{entry.title}}</h4>
+    <p>{{entry.abstract}}</p>
+    <button (click)="deleteItem(entry.id)" class="btn btn-outline-danger">BORRAR</button> 
     </li>
 </div>

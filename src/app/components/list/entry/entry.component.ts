@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Entry } from 'src/app/models/Entry';
+import { entry } from 'src/app/interfaces/Entry';
 import { EntriesServiceService } from 'src/app/services/entries-service.service';
 
 
@@ -9,7 +9,7 @@ import { EntriesServiceService } from 'src/app/services/entries-service.service'
   styleUrls: ['./entry.component.css']
 })
 export class EntryComponent implements OnInit {
-  public Entries:Array<Entry> =[];
+  public Entries:Array<entry> =[];
 
 
 
@@ -18,9 +18,19 @@ export class EntryComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.entriesService.getEntries().subscribe((res:Array<Entry>)=>{
+    this.loadInfo();
+    
+    
+  }
+  loadInfo(){
+    this.entriesService.getEntries().subscribe((res:Array<entry>)=>{
       this.Entries=res;
     })
+  }
+  deleteItem(id:number){
+    console.log(id);
+    this.entriesService.deleteEntry(id);
+    this.loadInfo();
     
   }
 
