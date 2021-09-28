@@ -20,7 +20,9 @@ export class EntryComponent implements OnInit {
   ngOnInit(): void {
     this.loadInfo();
     
-    
+  }
+  ngOnChanges():void{
+    this.loadInfo();
   }
   loadInfo(){
     this.entriesService.getEntries().subscribe((res:Array<entry>)=>{
@@ -29,9 +31,14 @@ export class EntryComponent implements OnInit {
   }
   deleteItem(id:number){
     console.log(id);
-    this.entriesService.deleteEntry(id);
-    this.loadInfo();
+    this.entriesService.deleteEntry(id).subscribe((res)=>{
+      console.log(res);
+      this.loadInfo();
+    });
+    
     
   }
 
 }
+
+export default EntryComponent;
