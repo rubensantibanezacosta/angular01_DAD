@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { entry } from 'src/app/interfaces/Entry';
 import { EntriesServiceService } from 'src/app/services/entries-service.service';
-import { EntryComponent } from './entry/entry.component';
+import  EntryComponent  from './entry/entry.component';
 
 
 
@@ -12,8 +12,7 @@ import { EntryComponent } from './entry/entry.component';
   styleUrls: ['./list.component.css']
 })
 export class ListComponent implements OnInit {
- @ViewChild(EntryComponent)
-  p!: EntryComponent;
+ @ViewChild(EntryComponent) p!:EntryComponent;
   constructor(private entriesService:EntriesServiceService){}
     entriesCount:number=0;
 
@@ -36,7 +35,7 @@ export class ListComponent implements OnInit {
       }
 
       this.entriesService.postEntry(entry).subscribe(
-        this.p.ngOnInit
+        this.p.loadInfo
       );
       
       
