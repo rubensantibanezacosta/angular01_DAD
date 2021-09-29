@@ -3,13 +3,17 @@ import { Routes, RouterModule } from '@angular/router';
 import { PageNotFoundComponent } from './views/page-not-found/page-not-found.component';
 import { AboutUsComponent } from './views/about-as/about-us.component';
 import { ListComponent } from './components/list/list.component';
+import { LoginComponent } from './views/login/login.component';
+import { InitialGuardGuard } from './guards/initial-guard.guard';
 
 
 const routes: Routes = [
-  { path: 'list', component: ListComponent },
+  { path: 'list', canActivate: [InitialGuardGuard], component: ListComponent },
   { path: 'us', component: AboutUsComponent },
-  { path: '', redirectTo: '/list', pathMatch:'full'},
+  { path: 'login', component: LoginComponent},
+  { path: '', redirectTo: '/login', pathMatch:'full'},
   { path:'**', component:PageNotFoundComponent} 
+  
 ];
 @NgModule({
   declarations: [],

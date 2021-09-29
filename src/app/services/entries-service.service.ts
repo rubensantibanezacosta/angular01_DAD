@@ -28,7 +28,7 @@ export class EntriesServiceService {
     return this.httpClient.get<entry>(this.endpoint, { params: {id} })
   }
 
-  postEntry(body:entry){
+  createEntry(body:entry):Observable<any>{
     return this.httpClient.post(this.endpoint, JSON.stringify(body), httpOptions)
   }
 
@@ -37,7 +37,6 @@ export class EntriesServiceService {
   }
 
   deleteEntry(id:number){
-    console.log(id);
     return this.httpClient.delete(this.endpoint+"/"+id);
   }
 

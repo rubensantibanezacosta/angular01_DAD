@@ -1,4 +1,6 @@
 *{
-    background-image: linear-gradient(to bottom, #292b22, #25261f, #21211c, #1c1d1a, #181817);
-    height:100vh;
+    background-image: linear-gradient(to bottom, #292b22, #32332d, #31312b, hsl(80, 5%, 11%), #383836);
+    height:100%;
+    min-height: 100vh;
+    background-attachment: fixed;
 }

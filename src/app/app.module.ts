@@ -10,6 +10,8 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { PageNotFoundComponent } from './views/page-not-found/page-not-found.component';
 import { AboutUsComponent } from './views/about-as/about-us.component';
+import { FormsModule } from '@angular/forms';
+import { LoginComponent } from './views/login/login.component';
 
 @NgModule({
   declarations: [
@@ -18,12 +20,15 @@ import { AboutUsComponent } from './views/about-as/about-us.component';
     ListComponent,
     EntryComponent,
     AboutUsComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    LoginComponent,
+    
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
