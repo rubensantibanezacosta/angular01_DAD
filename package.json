@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "tab:init-json-server": "ttab json-server './initialEntries.json'",
+    "tab:serve": "ttab ng serve | sleep 20; xdg-open 'http://localhost:4200'",
+    "start": "run-s tab:init-json-server tab:serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
@@ -21,6 +23,7 @@
     "@popperjs/core": "^2.10.1",
     "bootstrap": "^5.1.1",
     "jquery": "^3.6.0",
+    "json-server": "^0.16.3",
     "rxjs": "~6.6.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
@@ -37,6 +40,8 @@
     "karma-coverage": "~2.0.3",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
+    "npm-run-all": "^4.1.5",
+    "ttab": "^0.7.1",
     "typescript": "~4.3.5"
   }
 }

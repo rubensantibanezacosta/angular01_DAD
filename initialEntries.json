@@ -1,29 +1,3 @@
 {
-  "entries": [
-    {
-      "id": 1,
-      "title": "titulo1",
-      "abstract": "Descripcion1"
-    },
-    {
-      "id": 2,
-      "title": "titulo2",
-      "abstract": "Descripcion2"
-    },
-    {
-      "id": 3,
-      "title": "titulo3",
-      "abstract": "Descripcion3"
-    },
-    {
-      "id": 4,
-      "title": "titulo4",
-      "abstract": "Descripcion4"
-    },
-    {
-      "id": 5,
-      "title": "titulo5",
-      "abstract": "Descripcion5"
-    }
-  ]
+  "entries": []
 }
