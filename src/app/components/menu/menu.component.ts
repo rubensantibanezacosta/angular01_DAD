@@ -35,6 +35,7 @@ public logout(): void {
   if (localStorage.getItem('personalToken')) {
   this.Refresh()
   .then(()=>localStorage.removeItem('personalToken'))
+  .then(()=>this.miToken=0)
   .then(()=>this.router.navigate(['/login']))
   .catch((err)=>{console.log(err)})
   
